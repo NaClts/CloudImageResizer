@@ -8,7 +8,7 @@ The CloudImageResizer is an AWS application implemented with Java. It accepts cl
 
 Detailed steps are illustrated below:
 
-
+![Steps](https://raw.githubusercontent.com/NaClts/CloudImageResizer/refs/heads/main/steps.png)
 
 0. Server sets up S3 bucket and SQS queues. Then, client and server get the URL of each SQS queue.
 
