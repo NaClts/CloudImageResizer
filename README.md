@@ -58,15 +58,25 @@ myapp
 ```
 
 **pom.xml:** Maven configuration file containing dependencies, plugins, and build settings.
+
 **MainClient.java:** Main class of client application, which will invoke ClientHandler.java.
+
 **MainServer.java:** Main class of server application, which will invoke ServerHandler.java
+
 **ClientHandler.java:** Invoking AWS calls to support client-specific logic.
+
 **ServerHandler.java:** Invoking AWS calls to support server-specific logic.
+
 **DependencyFactory.java:** Building S3 and SQS clients.
+
 **AwsConfig.java:** Configured with names of S3 bucket and SQS queues to be used in client and server.
+
 **upload/:** Used by client. Folder of images which will be uploaded for image processing.
+
 **download/:** Used by client. Folder of processed images downloaded from AWS services.
+
 **server_upload/:** Used by server. Folder of processed images which will be uploaded to S3 bucket.
+
 **server_download/:** Used by server. Folder of images downloaded from S3 bucket for image processing.
 
 ## Installation / Compilation
@@ -76,24 +86,28 @@ myapp
 2. Clone this repository to the EC2 instance(s)
 
 3. Change directory to `myapp` and complie the application in each EC2 instance:
+
 ```mvn clean install```
 
-4. Clone this repository to client machine(s)
+5. Clone this repository to client machine(s)
 
-5. Change directory to `myapp` and complie the application in each client machine:
+6. Change directory to `myapp` and complie the application in each client machine:
+
 ```mvn clean install```
 
 ## Execution
 
 1. Run main server program in EC2 instance(s):
+
 ```mvn exec:java -Dexec.mainClass="naclts.cloudimageresizer.MainServer"```
 
-2. Put original images in `upload/` folder in client machine(s)
+3. Put original images in `upload/` folder in client machine(s)
 
-3. Run main client program in client machine(s):
+4. Run main client program in client machine(s):
+
 ```mvn exec:java -Dexec.mainClass="naclts.cloudimageresizer.MainClient"```
 
-4. Get the resized images in `download/` folder in client machine(s)
+5. Get the resized images in `download/` folder in client machine(s)
 
 ## Remarks
 
